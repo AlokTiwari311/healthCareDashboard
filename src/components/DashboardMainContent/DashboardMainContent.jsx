@@ -16,7 +16,7 @@ const DashboardMainContent = ({
   return (
     <main className="lg:ml-64 flex-1 bg-white">
       <div className="grid grid-cols-12 gap-6 ">
-        {/* Left Section */}
+        {/* Left wala Section */}
         <div className="col-span-6 space-y-6 p-6">
           {/* Header */}
           <div className="flex justify-between items-center gap-4">
@@ -49,7 +49,7 @@ const DashboardMainContent = ({
               </button>
             </div>
           </div>
-          {/* Title and Subtitle */}
+
           <div className="mb-6 flex justify-between text-blue-900">
             <h1 className="text-2xl font-bold ">Dashboard</h1>
 
@@ -58,7 +58,7 @@ const DashboardMainContent = ({
               This Week <MoveRightIcon size={12} className="mt-1" />
             </button>
           </div>
-          {/* Top row - Anatomy and Health Status Cards side by side */}
+
           <div className="grid md:grid-cols-8 xl:grid-cols-6 xl:gap-8   md:px-4">
             <div className=" sm:col-span-6 xl:col-span-4 ">
               <AnatomySection healthData={healthData} />
@@ -72,11 +72,10 @@ const DashboardMainContent = ({
             </div>
           </div>
 
-          {/* activity chart */}
+
           <ActivityChart />
         </div>
 
-        {/* Right Section - Calendar and Upcoming Schedule */}
         <div className="col-span-6 space-y-6 bg-blue-50 p-6">
           <div className="flex  justify-end space-x-4 max-xl:hidden">
             <div className="flex items-center space-x-3">

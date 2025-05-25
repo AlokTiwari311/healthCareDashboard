@@ -15,7 +15,7 @@ const AnatomySection = ({ healthData }) => {
         />
         <ZoomIn className="top-0 right-0 absolute text-gray-400" />
 
-        {/* Health Indicators */}
+        {/* health ka ind */}
         {healthData.map((item) => (
           <div key={item.id} className={`absolute ${item.position}`}>
             <div

@@ -1,4 +1,4 @@
-// components/icons/CustomGridIcon.jsx
+
 const CustomGridIcon = (props) => (
     <svg
         width="24"

@@ -1,11 +1,10 @@
 import React from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { calendarData } from "../../data/calendarData";
 
 const Component = () => {
   return (
     <div className="rounded-lg  w-full xl:max-w-3xl mx-auto">
-      {/* Header */}
+
       <div className="flex justify-between items-center mb-6 mx-6">
         <h2 className="text-indigo-900 text-xl font-semibold">October 2021</h2>
         <div className="flex items-center space-x-2">
@@ -23,7 +22,7 @@ const Component = () => {
         </div>
       </div>
 
-      {/* Days Grid */}
+
       <div className="grid grid-cols-7 gap-2 text-center text-sm font-medium text-indigo-800 mb-2">
         {calendarData.map((day, index) => (
           <div key={index} className="py-2">

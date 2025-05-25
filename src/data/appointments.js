@@ -1,5 +1,3 @@
-// src/data/appointments.js
-
 export const appointments = {
   dentist: {
     id: 1,

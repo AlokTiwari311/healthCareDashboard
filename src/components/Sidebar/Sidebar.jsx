@@ -3,14 +3,13 @@ import React from "react";
 const Sidebar = ({ navigationLinks }) => {
   return (
     <div className="fixed left-0 top-0 h-full w-64 bg-blue-50  flex flex-col overflow-hidden max-lg:hidden">
-      {/* Logo Section */}
       <div className="p-6 ">
         <h1 className="text-2xl font-bold text-gray-800">
           <span className="text-cyan-400">Health</span>care.
         </h1>
       </div>
 
-      {/* Navigation */}
+
       <nav className="flex-1 px-4 py-6">
         <div className="space-y-1">
           <div className="text-xs font-medium text-gray-400 tracking-wider mb-4 px-3">
