@@ -4,7 +4,7 @@ export const healthData = [
     name: "Healthy Heart",
     status: "healthy",
     color: "bg-[#2f2b9e]",
-    position: "top-32 left-59",
+    position: "top-20 right-0",
     icon: "❤️",
   },
   {
@@ -12,7 +12,7 @@ export const healthData = [
     name: "Healthy Leg",
     status: "healthy",
     color: "bg-teal-400",
-    position: "bottom-20 left-16",
+    position: "bottom-24 left-4",
     icon: "🦵",
   },
 ];

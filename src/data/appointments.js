@@ -2,14 +2,20 @@
 
 export const appointments = {
   dentist: {
+    id: 1,
     time: "09:00-11:00",
+    title: "Dentist",
     doctor: "Dr. Cameron Williamson",
     icon: "🦷",
+    color: "bg-blue-900",
   },
   physiotherapy: {
+    id: 2,
+    title: "Physiotherapy Appointment",
     time: "11:00-12:00",
     doctor: "Dr. Kevin Djones",
     icon: "💪",
+    color: "bg-[#DDE2F9]",
   },
 };
 

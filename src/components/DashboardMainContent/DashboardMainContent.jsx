@@ -1,53 +1,115 @@
-import React from 'react';
-
-import AnatomySection from '../AnatomySection/AnatomySection';
-import HealthStatusCards from '../HealthStatusCards/HealthStatusCards';
-import CalendarView from '../CalendarView/CalendarView';
-import UpcomingSchedule from '../UpcomingSchedule/UpcomingSchedule';
-import ActivityFeed from '../ActivityFeed/ActivityFeed';
+import AnatomySection from "../AnatomySection/AnatomySection";
+import HealthStatusCards from "../HealthStatusCards/HealthStatusCards";
+import Calendar from "../CalendarView/Calendar";
+import UpcomingSchedule from "../UpcomingSchedule/UpcomingSchedule";
+import { Menu, MoveRightIcon } from "lucide-react";
+import ActivityChart from "../ActivityFeed/ActivityChart";
+import SimpleAppointmentCard from "../SimpleAppointmentCard/SimpleAppointmentCard";
+import { Search, Bell, Plus } from "lucide-react";
 
 const DashboardMainContent = ({
-    healthData,
-    healthStatusCards,
-    calendarData,
-    appointments,
-    upcomingSchedule,
-    activityData,
+  healthData,
+  healthStatusCards,
+  appointments,
+  upcomingSchedule,
 }) => {
-    return (
-        <main className="ml-64 flex-1 bg-white p-4">
-            <div className="mb-6">
-                <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
-                <p className="text-gray-600">This Week</p>
+  return (
+    <main className="lg:ml-64 flex-1 bg-white">
+      <div className="grid grid-cols-12 gap-6 ">
+        {/* Left Section */}
+        <div className="col-span-6 space-y-6 p-6">
+          {/* Header */}
+          <div className="flex justify-between items-center gap-4">
+            <Menu className="w-6 h-6 text-blue-900 cursor-pointer lg:hidden" />
+            <div className="relative  w-full">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-900 w-4 h-4" />
+              <input
+                type="text"
+                placeholder="Search"
+                className="pl-10 pr-4 py-2  border border-gray-200 rounded-lg  focus:outline-none focus:ring-2 focus:ring-teal-500 w-full"
+              />
             </div>
-
-            <div className="grid grid-cols-12 gap-6">
-                {/* Left Section */}
-                <div className="col-span-6 space-y-6">
-                    {/* Top row - Anatomy and Health Status Cards side by side */}
-                    <div className="grid grid-cols-5 gap-4">
-                        <div className="col-span-3">
-                            <AnatomySection healthData={healthData} />
-                        </div>
-                        <div className="col-span-2">
-                            <HealthStatusCards healthStatusCards={healthStatusCards} />
-                        </div>
-                    </div>
-
-                    {/* Bottom row - Activity chart spanning full width */}
-                    <div>
-                        <ActivityFeed activityData={activityData} />
-                    </div>
-                </div>
-
-                {/* Right Section - Calendar and Upcoming Schedule */}
-                <div className="col-span-6 space-y-6">
-                    <CalendarView calendarData={calendarData} appointments={appointments} />
-                    <UpcomingSchedule upcomingSchedule={upcomingSchedule} />
-                </div>
+            <div className="relative p-2 border rounded-lg  border-gray-200">
+              <Bell className="w-5 h-5 text-blue-900 " fill="#3734A9" />
             </div>
-        </main>
-    );
+            <div className="flex  justify-end space-x-4  xl:hidden">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gray-100 border rounded-md flex items-center justify-center overflow-hidden">
+                  {/* <span className="text-white text-sm font-medium">JD</span> */}
+                  <img
+                    src="https://avatar.iran.liara.run/public"
+                    alt="User Avatar"
+                    draggable="false"
+                    className="w-8 h-8 rounded-full"
+                  />
+                </div>
+              </div>
+              <button className="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-950">
+                <Plus className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+          {/* Title and Subtitle */}
+          <div className="mb-6 flex justify-between text-blue-900">
+            <h1 className="text-2xl font-bold ">Dashboard</h1>
+
+            <button className="flex justify-center items-center text-blue-800 gap-1 mt-4">
+              <a href="details"></a>
+              This Week <MoveRightIcon size={12} className="mt-1" />
+            </button>
+          </div>
+          {/* Top row - Anatomy and Health Status Cards side by side */}
+          <div className="grid md:grid-cols-8 xl:grid-cols-6 xl:gap-8   md:px-4">
+            <div className=" sm:col-span-6 xl:col-span-4 ">
+              <AnatomySection healthData={healthData} />
+            </div>
+            <div className="w-full sm:col-span-2 xl:col-span-2 flex flex-col items-end justify-between  ">
+              <HealthStatusCards healthStatusCards={healthStatusCards} />
+              <button className="flex justify-center items-center text-blue-800 gap-1 mt-4">
+                <a href="details"></a>
+                Details <MoveRightIcon size={12} className="mt-1" />
+              </button>
+            </div>
+          </div>
+
+          {/* activity chart */}
+          <ActivityChart />
+        </div>
+
+        {/* Right Section - Calendar and Upcoming Schedule */}
+        <div className="col-span-6 space-y-6 bg-blue-50 p-6">
+          <div className="flex  justify-end space-x-4 max-xl:hidden">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gray-100 border rounded-md flex items-center justify-center overflow-hidden">
+                {/* <span className="text-white text-sm font-medium">JD</span> */}
+                <img
+                  src="https://avatar.iran.liara.run/public"
+                  alt="User Avatar"
+                  draggable="false"
+                  className="w-8 h-8 rounded-full"
+                />
+              </div>
+            </div>
+            <button className="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-950">
+              <Plus className="w-4 h-4" />
+            </button>
+          </div>
+          <Calendar />
+          <div className="flex flex-row gap-4 px-4">
+            <SimpleAppointmentCard
+              key={appointments.id}
+              appointment={appointments.dentist}
+            />
+            <SimpleAppointmentCard
+              key={appointments.id}
+              appointment={appointments.physiotherapy}
+            />
+          </div>
+          <UpcomingSchedule upcomingSchedule={upcomingSchedule} />
+        </div>
+      </div>
+    </main>
+  );
 };
 
 export default DashboardMainContent;
