@@ -5,7 +5,7 @@ import UpcomingSchedule from "../UpcomingSchedule/UpcomingSchedule";
 import { Menu, MoveRightIcon } from "lucide-react";
 import ActivityChart from "../ActivityFeed/ActivityChart";
 import SimpleAppointmentCard from "../SimpleAppointmentCard/SimpleAppointmentCard";
-import { Search, Bell, Plus } from "lucide-react";
+import { Search, Bell, Plus, ChevronDown } from "lucide-react";
 
 const DashboardMainContent = ({
   healthData,
@@ -55,7 +55,7 @@ const DashboardMainContent = ({
 
             <button className="flex justify-center items-center text-blue-800 gap-1 mt-4">
               <a href="details"></a>
-              This Week <MoveRightIcon size={12} className="mt-1" />
+              This Week <ChevronDown size={12} className="mt-1" />
             </button>
           </div>
 
